@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Personnel Allocation System (SPAS) Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 384px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #7a5195, #ef5675);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            line-height: 1;
+            color: #ffa600;
+            transform: translateY(2rem);
+        }
+    </style>
+</head>
+<body class="text-[#003f5c]">
+
+    <header class="bg-white shadow-md p-6 text-center sticky top-0 z-10">
+        <h1 class="text-4xl font-black tracking-tight">Smart Personnel Allocation System (SPAS)</h1>
+        <p class="text-lg text-[#374c80] mt-1">From Gut-Feeling to Data-Driven: Revolutionizing Team Formation</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="problem" class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">The High Cost of Manual Allocation</h2>
+            <p class="max-w-3xl mx-auto text-lg text-[#374c80] mb-8">Traditional project staffing relies on intuition and spreadsheets, leading to unfair workloads, skill mismatches, and employee burnout. This reactive approach puts project success and team morale at risk.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-[#7a5195] mb-2">Misaligned Talent</h3>
+                    <p class="text-base text-[#374c80] mb-4">A significant portion of an employee's potential is lost when their skills don't align with project needs. SPAS aims to close this gap.</p>
+                    <div class="chart-container">
+                        <canvas id="talentUtilizationChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-[#bc5090] mb-2">The Burnout Factor</h3>
+                    <p class="text-base text-[#374c80] mb-4">Uneven workload distribution is a primary driver of burnout. Visualizing capacity helps managers distribute tasks fairly.</p>
+                    <div class="chart-container">
+                        <canvas id="workloadDistributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="bg-white rounded-xl shadow-lg p-8 mb-16">
+            <h2 class="text-3xl font-bold text-center mb-2">Introducing SPAS: The Intelligent Solution</h2>
+            <p class="text-lg text-center max-w-3xl mx-auto text-[#374c80] mb-10">SPAS is a data-driven system designed to automate and optimize team formation. By leveraging an intelligent allocation engine, it ensures the right people are on the right projects at the right time.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="flex flex-col items-center">
+                    <div class="text-6xl mb-3">🎯</div>
+                    <h3 class="text-xl font-bold mb-2">Optimize Assignments</h3>
+                    <p class="text-[#374c80]">Algorithmically match personnel based on skills, workload, and project requirements to create high-performing teams.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-6xl mb-3">⚖️</div>
+                    <h3 class="text-xl font-bold mb-2">Ensure Fair Workloads</h3>
+                    <p class="text-[#374c80]">Provide real-time visibility into team capacity, preventing burnout and promoting a healthy work-life balance.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-6xl mb-3">📈</div>
+                    <h3 class="text-xl font-bold mb-2">Improve Project Success</h3>
+                    <p class="text-[#374c80]">Utilize talent effectively, reduce allocation errors, and increase the likelihood of delivering projects on time and on budget.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">The SPAS Allocation Process</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0">
+                <div class="text-center p-4 border-2 border-dashed border-[#7a5195] rounded-lg">
+                    <h3 class="font-bold text-lg">1. Data Input</h3>
+                    <p class="text-sm">Managers input project needs. Employees update skill profiles.</p>
+                </div>
+                <div class="flow-arrow hidden md:block">→</div>
+                <div class="text-2xl md:hidden">↓</div>
+                <div class="text-center p-4 border-2 border-dashed border-[#bc5090] rounded-lg">
+                    <h3 class="font-bold text-lg">2. Allocation Engine</h3>
+                    <p class="text-sm">Core algorithm processes data on skills, capacity & requirements.</p>
+                </div>
+                <div class="flow-arrow hidden md:block">→</div>
+                 <div class="text-2xl md:hidden">↓</div>
+                <div class="text-center p-4 border-2 border-dashed border-[#ef5675] rounded-lg">
+                    <h3 class="font-bold text-lg">3. Recommendations</h3>
+                    <p class="text-sm">System suggests optimal team compositions for review.</p>
+                </div>
+                <div class="flow-arrow hidden md:block">→</div>
+                 <div class="text-2xl md:hidden">↓</div>
+                <div class="text-center p-4 border-2 border-dashed border-[#ff764a] rounded-lg">
+                    <h3 class="font-bold text-lg">4. Final Assignment</h3>
+                    <p class="text-sm">Manager finalizes the team and assignments are confirmed.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Dashboard & Key Features</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-[#7a5195] mb-2">Project Skill Matching</h3>
+                    <p class="text-base text-[#374c80] mb-4">This visualization compares the required skills for a project against the combined skills of the assigned team, instantly highlighting strengths and potential gaps.</p>
+                    <div class="chart-container">
+                        <canvas id="skillMatchingChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-[#bc5090] mb-2">Allocation Fairness Report</h3>
+                    <p class="text-base text-[#374c80] mb-4">Ensure no single employee is consistently assigned high-stress or undesirable projects. This chart breaks down project types per employee.</p>
+                    <div class="chart-container">
+                        <canvas id="fairnessReportChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Benefits for Every User</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-center mb-4">For Project Managers</h3>
+                    <ul class="space-y-3 text-lg">
+                        <li class="flex items-start"><span class="text-green-500 mr-3">✅</span><span>Make informed, data-driven staffing decisions quickly.</span></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3">✅</span><span>Gain instant visibility into team capacity and workload.</span></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3">✅</span><span>Reduce time spent on manual team formation.</span></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3">✅</span><span>Mitigate risks associated with skill gaps and burnout.</span></li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-center mb-4">For Team Members</h3>
+                    <ul class="space-y-3 text-lg">
+                        <li class="flex items-start"><span class="text-green-500 mr-3">✅</span><span>Experience fairer workload distribution.</span></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3">✅</span><span>Get assigned to projects that better match their skills.</span></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3">✅</span><span>Clear visibility of their current and upcoming projects.</span></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3">✅</span><span>Opportunities for skill development are easier to identify.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="roadmap" class="text-center">
+            <h2 class="text-3xl font-bold text-center mb-8">SPAS Roadmap: MVP and Beyond</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <div class="absolute w-1 h-full bg-[#ffa600] left-1/2 -translate-x-1/2"></div>
+                    <div class="relative mb-8">
+                        <div class="absolute w-8 h-8 rounded-full bg-[#ef5675] left-1/2 -translate-x-1/2 -translate-y-4 border-4 border-white"></div>
+                        <div class="w-full md:w-1/2 md:pr-8 md:text-right">
+                            <div class="bg-white p-4 rounded-lg shadow-md">
+                                <h3 class="font-bold text-xl">Version 1.0 (MVP)</h3>
+                                <p>Core allocation engine, manual data entry, and essential dashboards for workload and fairness reporting.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative mb-8 flex flex-row-reverse">
+                        <div class="absolute w-8 h-8 rounded-full bg-[#7a5195] left-1/2 -translate-x-1/2 -translate-y-4 border-4 border-white"></div>
+                        <div class="w-full md:w-1/2 md:pl-8 md:text-left">
+                            <div class="bg-white p-4 rounded-lg shadow-md">
+                                <h3 class="font-bold text-xl">Future Vision</h3>
+                                <p>API integrations with Jira & HR systems, predictive performance analytics, and automated time-tracking inputs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-6 mt-12 bg-white border-t">
+        <p class="text-[#374c80]">Visualizing the future of efficient and fair project management with SPAS.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const processLabel = (label) => {
+                if (label.length > 16) {
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = '';
+                    words.forEach(word => {
+                        if ((currentLine + word).length > 16) {
+                            lines.push(currentLine.trim());
+                            currentLine = '';
+                        }
+                        currentLine += word + ' ';
+                    });
+                    lines.push(currentLine.trim());
+                    return lines;
+                }
+                return label;
+            };
+
+            const tooltipTitleCallback = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            
+            const brilliantBluesPalette = {
+                blue: '#003f5c',
+                purple: '#7a5195',
+                magenta: '#bc5090',
+                pink: '#ef5675',
+                orange: '#ff764a',
+                yellow: '#ffa600',
+                lightText: '#374c80'
+            };
+
+            const talentUtilizationCtx = document.getElementById('talentUtilizationChart').getContext('2d');
+            new Chart(talentUtilizationCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Skills Utilized', 'Untapped Potential'],
+                    datasets: [{
+                        label: 'Talent Utilization',
+                        data: [65, 35],
+                        backgroundColor: [brilliantBluesPalette.purple, '#e0e0e0'],
+                        borderColor: '#ffffff',
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        ...tooltipTitleCallback.plugins,
+                        legend: {
+                            position: 'bottom',
+                        },
+                        title: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            const workloadDistributionCtx = document.getElementById('workloadDistributionChart').getContext('2d');
+            new Chart(workloadDistributionCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Alex', 'Brenda', 'Charlie', 'Dana', 'Evan'],
+                    datasets: [{
+                        label: 'Current Workload (Hours/Week)',
+                        data: [55, 30, 42, 60, 25],
+                        backgroundColor: (context) => {
+                            const value = context.dataset.data[context.dataIndex];
+                            return value > 50 ? brilliantBluesPalette.pink : brilliantBluesPalette.purple;
+                        },
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                     ...tooltipTitleCallback,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Hours per Week'
+                            }
+                        }
+                    },
+                    plugins: {
+                        ...tooltipTitleCallback.plugins,
+                        legend: {
+                            display: false
+                        },
+                        annotation: {
+                            annotations: {
+                                line1: {
+                                    type: 'line',
+                                    yMin: 40,
+                                    yMax: 40,
+                                    borderColor: brilliantBluesPalette.yellow,
+                                    borderWidth: 2,
+                                    borderDash: [6, 6],
+                                    label: {
+                                        content: 'Optimal Capacity',
+                                        enabled: true,
+                                        position: 'end'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            const skillMatchingCtx = document.getElementById('skillMatchingChart').getContext('2d');
+            new Chart(skillMatchingCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['JavaScript', 'API Design', 'Database Mgmt.', 'UI/UX', 'Cloud Services', 'Agile Method.'],
+                    datasets: [{
+                        label: 'Project Requirements',
+                        data: [9, 7, 6, 8, 7, 9],
+                        backgroundColor: 'rgba(239, 86, 117, 0.2)',
+                        borderColor: brilliantBluesPalette.pink,
+                        pointBackgroundColor: brilliantBluesPalette.pink,
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: brilliantBluesPalette.pink
+                    }, {
+                        label: 'Team Skills',
+                        data: [8, 8, 5, 9, 4, 10],
+                        backgroundColor: 'rgba(122, 81, 149, 0.2)',
+                        borderColor: brilliantBluesPalette.purple,
+                        pointBackgroundColor: brilliantBluesPalette.purple,
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: brilliantBluesPalette.purple
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    ...tooltipTitleCallback,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                display: true
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 10,
+                            pointLabels: {
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            const fairnessReportCtx = document.getElementById('fairnessReportChart').getContext('2d');
+            const fairnessLabels = ['Alex Chen', 'Brenda Martinez', 'Charlie Davis', 'Dana Rodriguez'];
+            new Chart(fairnessReportCtx, {
+                type: 'bar',
+                data: {
+                    labels: fairnessLabels.map(label => processLabel(label)),
+                    datasets: [{
+                        label: 'New Feature Development',
+                        data: [2, 1, 3, 1],
+                        backgroundColor: brilliantBluesPalette.purple,
+                    }, {
+                        label: 'High-Complexity Bug Fixes',
+                        data: [3, 1, 1, 0],
+                        backgroundColor: brilliantBluesPalette.pink,
+                    }, {
+                        label: 'Routine Maintenance',
+                        data: [0, 3, 1, 4],
+                        backgroundColor: brilliantBluesPalette.yellow,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    ...tooltipTitleCallback,
+                    scales: {
+                        x: {
+                            stacked: true,
+                        },
+                        y: {
+                            stacked: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Projects'
+                            }
+                        }
+                    },
+                    plugins: {
+                        ...tooltipTitleCallback.plugins,
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
